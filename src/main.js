@@ -1,6 +1,10 @@
 import Vue from 'vue';
+import VueSVGIcon from 'vue-svgicon';
+
 import App from './App';
 import store from './store/index';
+
+Vue.use(VueSVGIcon);
 
 Vue.config.productionTip = false;
 
