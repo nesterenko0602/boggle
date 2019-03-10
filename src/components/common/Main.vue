@@ -1,12 +1,16 @@
 <template>
   <main class="main__wrapper">
+    <Board />
   </main>
 </template>
 
 <script>
+import Board from 'components/common/Board';
+
 export default {
   name: 'Main',
   components: {
+    Board,
   },
 };
 </script>
