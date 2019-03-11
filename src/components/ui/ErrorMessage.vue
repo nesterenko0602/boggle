@@ -4,7 +4,7 @@
       name="error"
       size="14"
     />
-    {{ error }}
+    This word was typed earlier
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
      * @inheritdoc
      */
     ...mapGetters({
-      error: 'getError',
+      hasError: 'getDuplicateError',
     }),
 
     /**
@@ -31,11 +31,11 @@ export default {
      *
      * @returns {Array}
      */
-    classNames: function classNames() {
+    classNames() {
       return [
         'error-message__wrapper',
         {
-          'error-message__wrapper--visible': this.isFilled,
+          'error-message__wrapper--visible': this.hasError,
         },
       ];
     },
