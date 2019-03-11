@@ -22,4 +22,20 @@ export default {
    * @returns {Array<Object>}
    */
   getAttemts: state => state.attemts,
+
+  /**
+   * Get game start time
+   *
+   * @param {Object} state
+   * @returns {Number|null}
+   */
+  getStartTime: state => state.startTime,
+
+  /**
+   * Get game ID
+   *
+   * @param {Object} state
+   * @returns {Number}
+   */
+  getGameId: state => state.gameId,
 };
