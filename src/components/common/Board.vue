@@ -6,13 +6,13 @@
       @submit="sendWord"
     />
     <Collection
-      :symbols="symbols"
+      :items="items"
     />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 import Collection from 'components/ui/Collection/Collection';
 import Input from 'components/ui/Input';
@@ -25,9 +25,11 @@ export default {
     Input,
     TextHeader,
   },
-  data: () => ({
-    symbols: ['A', 'C', 'E', 'D', 'L', 'U', 'G', '*', 'E', '*', 'H', 'T', 'G', 'A', 'F', 'K'],
-  }),
+  computed: {
+    ...mapGetters({
+      items: 'getLayout',
+    }),
+  },
   methods: {
     ...mapActions([
       'sendWord',

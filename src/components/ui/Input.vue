@@ -114,7 +114,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'styles/helpers.scss';
 @import 'styles/variables.scss';
 
 .input__wrapper {
@@ -131,7 +130,6 @@ export default {
 
   &.input__wrapper--loading {
     .icon-loader {
-      animation: spin 1s infinite linear;
       opacity: 1;
       padding: 13px 12px;
       transition-delay: .3s;

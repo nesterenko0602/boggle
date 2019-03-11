@@ -46,3 +46,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import 'styles/helpers.scss';
+
+.icon-loader {
+  animation: spin 1s infinite linear;
+}
+</style>

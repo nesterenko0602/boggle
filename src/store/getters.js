@@ -6,4 +6,12 @@ export default {
    * @returns {boolean}
    */
   getIsLoading: state => state.isLoading,
+
+  /**
+   * Get current letters layout
+   *
+   * @param {Object} state
+   * @returns {Array<String>}
+   */
+  getLayout: state => state.items,
 };
