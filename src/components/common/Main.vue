@@ -1,16 +1,16 @@
 <template>
   <main class="main__wrapper">
-    <Board />
+    <Content />
   </main>
 </template>
 
 <script>
-import Board from 'components/common/Board';
+import Content from 'components/common/Content';
 
 export default {
   name: 'Main',
   components: {
-    Board,
+    Content,
   },
 };
 </script>
