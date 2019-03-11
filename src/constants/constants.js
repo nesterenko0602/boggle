@@ -14,3 +14,11 @@ export const STORAGE_NAME = 'ChainStackToDoList';
  * Duration of one game in seconds
  */
 export const GAME_DURATION = 60;
+
+/**
+ * Possible results of checking typed word
+ */
+export const CHECK_STATUSES = {
+  SUCCESS: 'success',
+  ERROR: 'error',
+};

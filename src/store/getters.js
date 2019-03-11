@@ -1,3 +1,5 @@
+import { CHECK_STATUSES } from 'constants/constants';
+
 export default {
   /**
    * Get error related to last typed word
@@ -21,7 +23,7 @@ export default {
    * @param {Object} state
    * @returns {Array<Object>}
    */
-  getAttemts: state => state.attemts,
+  getAttempts: state => state.attempts,
 
   /**
    * Get game start time
@@ -38,4 +40,15 @@ export default {
    * @returns {Number}
    */
   getGameId: state => state.gameId,
+
+  /**
+   * Get amount of found words
+   *
+   * @param {Object} state
+   * @returns {Number}
+   */
+  getFoundWords: (state, globalGetters) => globalGetters
+    .getAttempts
+    .filter(item => item.status === CHECK_STATUSES.SUCCESS)
+    .length,
 };
