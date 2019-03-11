@@ -1,16 +1,22 @@
 <template>
-  <div class="text-header__wrapper"></div>
+  <h2
+    v-text="message"
+  />
 </template>
 
 <script>
 export default {
   name: 'TextHeader',
   props: {
+    /**
+     * Header text
+     */
+    message: {
+      type: String,
+      default: '',
+      required: true,
+    },
   },
-  methods: {
-  },
+
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
