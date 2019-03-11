@@ -3,6 +3,7 @@
     :width="size"
     :height="size"
     :icon="name"
+    :class="className"
   />
 </template>
 
@@ -25,6 +26,16 @@ export default {
     size: {
       type: String,
       default: '24',
+    },
+  },
+  computed: {
+    /**
+     * Get name-specific class for icon
+     *
+     * @returns {string}
+     */
+    className: function className() {
+      return `icon-${this.name}`;
     },
   },
   mounted: function mounted() {
