@@ -28,6 +28,7 @@ import StartScreen from 'components/common/StartScreen';
 import Collection from 'components/ui/Collection/Collection';
 import ErrorMessage from 'components/ui/ErrorMessage';
 import Input from 'components/ui/Input';
+import Timer from 'components/ui/Timer';
 import TextHeader from 'components/ui/TextHeader';
 
 export default {
@@ -38,6 +39,7 @@ export default {
     Input,
     StartScreen,
     TextHeader,
+    Timer,
   },
   computed: {
     ...mapGetters({
