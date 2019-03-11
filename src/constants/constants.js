@@ -22,3 +22,12 @@ export const CHECK_STATUSES = {
   SUCCESS: 'success',
   ERROR: 'error',
 };
+
+/**
+ * Possible states of application
+ */
+export const APP_STATES = {
+  START: 'start',
+  GAME: 'game',
+  FINISH: 'finish',
+};

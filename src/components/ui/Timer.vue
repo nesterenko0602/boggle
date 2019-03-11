@@ -38,17 +38,17 @@ export default {
       'finishGame',
     ]),
     timerLoop() {
-      const diffSeconds = parseInt(
-        ((new Date()).getTime() - this.startTime) / 1000,
+      const timeDifference = parseInt(
+        (new Date().getTime() - this.startTime) / 1000,
         10,
       );
 
-      if (diffSeconds > GAME_DURATION) {
+      if (timeDifference > GAME_DURATION) {
         this.finishGame();
         return;
       }
 
-      this.timer = GAME_DURATION - diffSeconds;
+      this.timer = GAME_DURATION - timeDifference;
       this.last10Seconds = this.timer < 10;
 
       setTimeout(this.timerLoop, 1000);
@@ -62,6 +62,7 @@ export default {
 @import 'styles/variables.scss';
 
 .timer__wrapper {
+  display: inline-block;
   transition: color .3s ease;
 
   &.timer__wrapper--alert {

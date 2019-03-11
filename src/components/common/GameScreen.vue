@@ -13,12 +13,6 @@
       </div>
       <div class="game-screen__aside">
         <div class="game-screen__statistics-line">
-          Seconds left
-          <div class="game-screen__statistics-value">
-            <Timer />
-          </div>
-        </div>
-        <div class="game-screen__statistics-line">
           Found words
           <div class="game-screen__statistics-value">
             {{ foundWords }}
@@ -37,7 +31,6 @@ import Attempts from 'components/common/Attempts';
 import Collection from 'components/ui/Collection/Collection';
 import ErrorMessage from 'components/ui/ErrorMessage';
 import Input from 'components/ui/Input';
-import Timer from 'components/ui/Timer';
 
 export default {
   name: 'StartScreen',
@@ -46,7 +39,6 @@ export default {
     Collection,
     ErrorMessage,
     Input,
-    Timer,
   },
   computed: {
     ...mapGetters({

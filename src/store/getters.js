@@ -13,7 +13,7 @@ export default {
    * Get current configuration
    *
    * @param {Object} state
-   * @returns {Array<String>}
+   * @returns {Array.<String>}
    */
   getConfiguration: state => state.items,
 
@@ -21,7 +21,7 @@ export default {
    * Get all user's attemtps
    *
    * @param {Object} state
-   * @returns {Array<Object>}
+   * @returns {Array.<Object>}
    */
   getAttempts: state => state.attempts,
 
@@ -42,12 +42,21 @@ export default {
   getGameId: state => state.gameId,
 
   /**
+   * Get is game finished
+   *
+   * @param {Object} state
+   * @returns {boolean}
+   */
+  getIsFinished: state => state.isFinished,
+
+  /**
    * Get amount of found words
    *
    * @param {Object} state
+   * @param {Object} getters
    * @returns {Number}
    */
-  getFoundWords: (state, globalGetters) => globalGetters
+  getFoundWords: (state, getters) => getters
     .getAttempts
     .filter(item => item.status === CHECK_STATUSES.SUCCESS)
     .length,

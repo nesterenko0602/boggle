@@ -1,22 +1,9 @@
 <template>
-  <h2
-    v-text="message"
-  />
+  <h2><slot /></h2>
 </template>
 
 <script>
 export default {
   name: 'TextHeader',
-  props: {
-    /**
-     * Header text
-     */
-    message: {
-      type: String,
-      default: '',
-      required: true,
-    },
-  },
-
 };
 </script>

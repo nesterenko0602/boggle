@@ -35,7 +35,7 @@ $line-height: 24;
   color: $grey-dark;
   line-height: unquote($line-height + 'px');
   margin-top: 10px;
-  max-height: unquote($line-height * 6.5 + 'px');
+  max-height: unquote($line-height * 7.5 + 'px');
   overflow: scroll;
   position: relative;
 }

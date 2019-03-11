@@ -4,4 +4,5 @@ export default {
   attempts: [],
   startTime: null,
   gameId: null,
+  isFinished: true,
 };

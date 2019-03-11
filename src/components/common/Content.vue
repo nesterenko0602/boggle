@@ -1,29 +1,64 @@
 <template>
   <div class="board__wrapper">
-    <TextHeader message="Boggle game" />
-    <StartScreen v-if="!startTime" />
-    <GameScreen v-else />
+    <template v-if="appState === APP_STATES.START">
+      <TextHeader>Boggle game</TextHeader>
+      <StartScreen />
+    </template>
+    <template v-if="appState === APP_STATES.GAME">
+      <TextHeader><Timer /> seconds left...</TextHeader>
+      <GameScreen />
+    </template>
+    <template v-if="appState === APP_STATES.FINISH">
+      <TextHeader>Congrats!</TextHeader>
+      <FinishScreen />
+    </template>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 
-import StartScreen from 'components/common/StartScreen';
+import FinishScreen from 'components/common/FinishScreen';
 import GameScreen from 'components/common/GameScreen';
+import StartScreen from 'components/common/StartScreen';
 import TextHeader from 'components/ui/TextHeader';
+import Timer from 'components/ui/Timer';
+import { APP_STATES } from 'constants/constants';
 
 export default {
   name: 'Board',
   components: {
+    FinishScreen,
     GameScreen,
     StartScreen,
     TextHeader,
+    Timer,
+  },
+  data() {
+    return { APP_STATES };
   },
   computed: {
     ...mapGetters({
       startTime: 'getStartTime',
+      isFinished: 'getIsFinished',
     }),
+    timeDifference() {
+      return parseInt(
+        (new Date().getTime() - this.startTime) / 1000,
+        10,
+      );
+    },
+    appState() {
+      if (!this.startTime) {
+        return APP_STATES.START;
+      }
+
+      if (this.isFinished) {
+        return APP_STATES.FINISH;
+      }
+
+      return APP_STATES.GAME;
+    },
   },
 };
 </script>
