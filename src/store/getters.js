@@ -7,7 +7,7 @@ export default {
    * @param {Object} state
    * @returns {string}
    */
-  getError: state => state.error,
+  getDuplicateError: state => state.duplicateError,
 
   /**
    * Get current configuration
@@ -34,20 +34,20 @@ export default {
   getStartTime: state => state.startTime,
 
   /**
-   * Get game ID
-   *
-   * @param {Object} state
-   * @returns {Number}
-   */
-  getGameId: state => state.gameId,
-
-  /**
    * Get is game finished
    *
    * @param {Object} state
    * @returns {boolean}
    */
   getIsFinished: state => state.isFinished,
+
+  /**
+   * Get is game started
+   *
+   * @param {Object} state
+   * @returns {boolean}
+   */
+  getIsLoading: state => state.isLoading,
 
   /**
    * Get amount of found words

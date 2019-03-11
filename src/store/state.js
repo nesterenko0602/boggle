@@ -1,8 +1,13 @@
-export default {
-  error: 'This word was typed earlier',
-  items: ['A', 'C', 'E', 'D', 'L', 'U', 'G', '*', 'E', '*', 'H', 'T', 'G', 'A', 'F', 'K'],
+/**
+ * Initial app state
+ */
+export const initialState = {
+  duplicateError: false,
+  items: [],
   attempts: [],
   startTime: null,
-  gameId: null,
-  isFinished: true,
+  isLoading: false,
+  isFinished: false,
 };
+
+export default initialState;

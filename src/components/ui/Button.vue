@@ -1,12 +1,15 @@
 <template>
   <button
     type="button"
+    :disabled="isLoading"
   >
     {{ value }}
   </button>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'Button',
   props: {
@@ -15,6 +18,11 @@ export default {
       required: true,
       type: String,
     },
+  },
+  computed: {
+    ...mapGetters({
+      isLoading: 'getIsLoading',
+    }),
   },
 };
 </script>
@@ -42,6 +50,12 @@ button {
   &:focus {
     background-color: #1575be;
     transform: translateY(-3px);
+  }
+
+  &:disabled {
+    cursor: progress;
+    opacity: .6;
+    transform: none;
   }
 }
 </style>
