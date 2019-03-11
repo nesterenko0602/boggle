@@ -1,7 +1,7 @@
 <template>
   <div class="start-screen__wrapper">
     <div class="start-screen__rules">
-      Try to find as many words as possible in 1 minute.
+      Try to find as many words as possible in <b>{{ GAME_DURATION }} seconds</b>.
     </div>
     <Button
       value="Let's start!"
@@ -14,11 +14,15 @@
 import { mapActions } from 'vuex';
 
 import Button from 'components/ui/Button';
+import { GAME_DURATION } from 'constants/constants';
 
 export default {
   name: 'StartScreen',
   components: {
     Button,
+  },
+  data() {
+    return { GAME_DURATION };
   },
   methods: {
     ...mapActions([
