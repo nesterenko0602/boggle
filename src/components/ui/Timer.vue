@@ -43,7 +43,7 @@ export default {
         10,
       );
 
-      if (diffSeconds >= GAME_DURATION) {
+      if (diffSeconds > GAME_DURATION) {
         this.finishGame();
         return;
       }

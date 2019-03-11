@@ -2,55 +2,28 @@
   <div class="board__wrapper">
     <TextHeader message="Boggle game" />
     <StartScreen v-if="!startTime" />
-    <template v-else>
-      <Input
-        placeholder="Enter the word"
-        @submit="sendWord"
-      />
-      <ErrorMessage />
-      <div class="board__main">
-        <Collection
-          :items="items"
-        />
-      </div>
-      <div class="board__aside">
-        <Timer />
-        <Attempts />
-      </div>
-    </template>
+    <GameScreen v-else />
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 
 import StartScreen from 'components/common/StartScreen';
-import Collection from 'components/ui/Collection/Collection';
-import ErrorMessage from 'components/ui/ErrorMessage';
-import Input from 'components/ui/Input';
-import Timer from 'components/ui/Timer';
+import GameScreen from 'components/common/GameScreen';
 import TextHeader from 'components/ui/TextHeader';
 
 export default {
   name: 'Board',
   components: {
-    Collection,
-    ErrorMessage,
-    Input,
+    GameScreen,
     StartScreen,
     TextHeader,
-    Timer,
   },
   computed: {
     ...mapGetters({
-      items: 'getConfiguration',
       startTime: 'getStartTime',
     }),
-  },
-  methods: {
-    ...mapActions([
-      'sendWord',
-    ]),
   },
 };
 </script>
