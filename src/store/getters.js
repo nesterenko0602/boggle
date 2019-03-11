@@ -1,17 +1,25 @@
 export default {
   /**
-   * Is offered word checking now?
+   * Get error related to last typed word
    *
    * @param {Object} state
-   * @returns {boolean}
+   * @returns {string}
    */
-  getIsLoading: state => state.isLoading,
+  getError: state => state.error,
 
   /**
-   * Get current letters layout
+   * Get current configuration
    *
    * @param {Object} state
    * @returns {Array<String>}
    */
-  getLayout: state => state.items,
+  getConfiguration: state => state.items,
+
+  /**
+   * Get all user's attemtps
+   *
+   * @param {Object} state
+   * @returns {Array<Object>}
+   */
+  getAttemts: state => state.attemts,
 };

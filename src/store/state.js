@@ -1,6 +1,5 @@
 export default {
-  isLoading: false,
-  error: null,
-  isSuccessful: false,
+  error: 'This word was typed earlier',
   items: ['A', 'C', 'E', 'D', 'L', 'U', 'G', '*', 'E', '*', 'H', 'T', 'G', 'A', 'F', 'K'],
+  attempts: [],
 };

@@ -5,6 +5,7 @@
       placeholder="Enter the word"
       @submit="sendWord"
     />
+    <ErrorMessage />
     <Collection
       :items="items"
     />
@@ -15,6 +16,7 @@
 import { mapActions, mapGetters } from 'vuex';
 
 import Collection from 'components/ui/Collection/Collection';
+import ErrorMessage from 'components/ui/ErrorMessage';
 import Input from 'components/ui/Input';
 import TextHeader from 'components/ui/TextHeader';
 
@@ -22,12 +24,13 @@ export default {
   name: 'Board',
   components: {
     Collection,
+    ErrorMessage,
     Input,
     TextHeader,
   },
   computed: {
     ...mapGetters({
-      items: 'getLayout',
+      items: 'getConfiguration',
     }),
   },
   methods: {

@@ -42,10 +42,9 @@ export default {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
+  margin: 0 -2px;
   min-height: 100px;
-  width: 240px;
+  width: 220px;
 
   .icon-loader {
     color: $grey;

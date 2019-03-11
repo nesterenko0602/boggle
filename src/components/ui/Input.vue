@@ -7,13 +7,8 @@
       type="text"
       class="input"
       :placeholder="placeholder"
-      :disabled="isLoading"
       @keydown="keyDownHandler"
     >
-    <Icon
-      name="loader"
-      size="16"
-    />
     <Icon
       name="send"
       size="16"
@@ -23,8 +18,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 import Icon from 'components/ui/Icon';
 import { KEY_CODES } from 'constants/constants';
 
@@ -47,13 +40,6 @@ export default {
   },
   computed: {
     /**
-     * @inheritdoc
-     */
-    ...mapGetters({
-      isLoading: 'getIsLoading',
-    }),
-
-    /**
      * Whether input field not empty?
      *
      * @returns {Boolean}
@@ -71,8 +57,7 @@ export default {
       return [
         'input__wrapper',
         {
-          'input__wrapper--loading': this.isLoading,
-          'input__wrapper--filled': this.isFilled && !this.isLoading,
+          'input__wrapper--filled': this.isFilled,
         },
       ];
     },
@@ -117,7 +102,7 @@ export default {
 @import 'styles/variables.scss';
 
 .input__wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   position: relative;
 
   &.input__wrapper--filled {
@@ -125,14 +110,6 @@ export default {
       cursor: pointer;
       opacity: 1;
       pointer-events: all;
-    }
-  }
-
-  &.input__wrapper--loading {
-    .icon-loader {
-      opacity: 1;
-      padding: 13px 12px;
-      transition-delay: .3s;
     }
   }
 }
