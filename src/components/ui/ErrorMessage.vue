@@ -57,8 +57,8 @@ export default {
   color: $alert;
   display: flex;
   font-size: 14px;
-  height: 20px;
   margin-bottom: 10px;
+  min-height: 20px;
   opacity: 0;
   transition: opacity .3s ease;
 

@@ -46,6 +46,7 @@ button {
   padding: 12px 16px;
   transition: all 0.15s ease-in-out;
   user-select: none;
+  white-space: nowrap;
   width: 100%;
 
   &:hover,

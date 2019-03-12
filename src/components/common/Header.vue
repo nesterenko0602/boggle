@@ -14,6 +14,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'styles/variables.scss';
+
 .header__wrapper {
   flex: 0 0 auto;
   margin: 60px auto 30px;
@@ -22,5 +24,11 @@ export default {
 .header__logo {
   border-radius: 50%;
   width: 200px;
+}
+
+@media screen and (max-width: $mobile-width) {
+  .header__logo {
+    width: 100px;
+  }
 }
 </style>

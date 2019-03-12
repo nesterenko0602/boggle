@@ -16,8 +16,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'styles/variables.scss';
+
 .main__wrapper {
   flex: 1 1 auto;
   margin: 0 auto;
+}
+
+@media screen and (max-width: $mobile-width) {
+  .main__wrapper {
+    margin: 0;
+  }
 }
 </style>

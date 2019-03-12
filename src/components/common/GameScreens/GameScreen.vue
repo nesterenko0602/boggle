@@ -77,4 +77,21 @@ export default {
   font-weight: bold;
   margin-left: 10px;
 }
+
+@media screen and (max-width: $mobile-width) {
+  .game-screen__main {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .game-screen__aside {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .game-screen__statistics-line {
+    border-bottom: none;
+    justify-content: flex-start;
+  }
+}
 </style>

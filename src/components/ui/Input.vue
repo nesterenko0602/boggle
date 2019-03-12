@@ -6,6 +6,7 @@
       v-model="message"
       type="text"
       class="input"
+      maxlength="16"
       :placeholder="placeholder"
       @keydown="keyDownHandler"
     >
