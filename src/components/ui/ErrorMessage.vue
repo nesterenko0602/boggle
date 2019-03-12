@@ -56,7 +56,7 @@ export default {
   display: flex;
   font-size: 14px;
   height: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   opacity: 0;
   transition: opacity .3s ease;
 
