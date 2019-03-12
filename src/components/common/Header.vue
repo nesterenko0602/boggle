@@ -14,13 +14,13 @@ export default {
 </script>
 
 <style scoped>
-  .header__wrapper {
-    flex: 0 0 auto;
-    margin: 60px auto 30px;
-  }
+.header__wrapper {
+  flex: 0 0 auto;
+  margin: 60px auto 30px;
+}
 
-  .header__logo {
-    border-radius: 50%;
-    width: 200px;
-  }
+.header__logo {
+  border-radius: 50%;
+  width: 200px;
+}
 </style>

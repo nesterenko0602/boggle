@@ -43,23 +43,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import 'styles/variables.scss';
+@import 'styles/variables.scss';
 
-  .finish-screen__wrapper {
-    align-items: center;
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-  }
+.finish-screen__wrapper {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
 
-  .finish-screen__text {
-    margin-bottom: 40px;
-    text-align: left;
-    width: 100%;
-  }
+.finish-screen__text {
+  margin-bottom: 40px;
+  text-align: left;
+  width: 100%;
+}
 
-  .finish-screen__numbers {
-    color: $primary;
-    font-weight: bold;
-  }
+.finish-screen__numbers {
+  color: $primary;
+  font-weight: bold;
+}
 </style>

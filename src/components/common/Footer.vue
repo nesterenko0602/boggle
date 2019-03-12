@@ -21,23 +21,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import 'styles/variables.scss';
+@import 'styles/variables.scss';
 
-  .footer__wrapper {
-    background: $dark;
+.footer__wrapper {
+  background: $dark;
+  color: $light;
+  flex: 0 0 auto;
+  margin: 60px 0 0;
+  padding: 20px 30px;
+  text-align: center;
+
+  a {
     color: $light;
-    flex: 0 0 auto;
-    margin: 60px 0 0;
-    padding: 20px 30px;
-    text-align: center;
+    transition: color .15s ease;
 
-    a {
-      color: $light;
-      transition: color .15s ease;
-
-      &:hover {
-        color: $primary;
-      }
+    &:hover {
+      color: $primary;
     }
   }
+}
 </style>

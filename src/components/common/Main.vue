@@ -16,8 +16,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .main__wrapper {
-    flex: 1 1 auto;
-    margin: 0 auto;
-  }
+.main__wrapper {
+  flex: 1 1 auto;
+  margin: 0 auto;
+}
 </style>

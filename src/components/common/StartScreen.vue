@@ -33,16 +33,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .start-screen__wrapper {
-    align-items: center;
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-  }
+.start-screen__wrapper {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
 
-  .start-screen__rules {
-    margin-bottom: 40px;
-    text-align: left;
-    width: 100%;
-  }
+.start-screen__rules {
+  margin-bottom: 40px;
+  text-align: left;
+  width: 100%;
+}
 </style>
