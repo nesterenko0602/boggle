@@ -33,7 +33,7 @@ export default {
 
     a {
       color: $light;
-      transition: color .1s ease;
+      transition: color .15s ease;
 
       &:hover {
         color: $primary;

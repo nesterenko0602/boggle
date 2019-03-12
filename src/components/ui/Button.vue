@@ -41,7 +41,7 @@ button {
   font-weight: bold;
   height: 50px;
   padding: 12px 16px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
   user-select: none;
   width: 100%;
 

@@ -16,11 +16,12 @@ export const STORAGE_NAME = 'ChainStackToDoList';
 export const GAME_DURATION = 60;
 
 /**
- * Possible results of checking typed word
+ * Possible states of checking word
  */
 export const CHECK_STATUSES = {
-  SUCCESS: 'success',
   ERROR: 'error',
+  PENDING: 'pending',
+  SUCCESS: 'success',
 };
 
 /**
@@ -31,3 +32,8 @@ export const APP_STATES = {
   GAME: 'game',
   FINISH: 'finish',
 };
+
+/**
+ * Minimal word length to sumbit
+ */
+export const MIN_WORD_LENGTH = 3;
