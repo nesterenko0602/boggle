@@ -15,7 +15,7 @@ export default {
    * @param {Object} state
    * @returns {Array.<String>}
    */
-  getConfiguration: state => state.items,
+  getConfiguration: state => state.configuration,
 
   /**
    * Get all user's attemtps

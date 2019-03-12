@@ -1,28 +1,30 @@
 import { CHECK_STATUSES } from 'constants/constants';
+import { deepCopy } from 'helpers/utils';
 import { initialState } from 'store/state';
 
 /* eslint-disable no-param-reassign */
 export const MUTATIONS = {
-  LOAD_START: 'loadStart',
+  DROP_ERROR: 'dropError',
+  FINISH_GAME: 'finishGame',
+  START_GAME: 'loadStart',
   LOAD_SUCCESS: 'loadSuccess',
   REGISTER_ATTEMPT: 'registerAttempt',
-  DROP_ERROR: 'dropError',
   REGISTER_ERROR: 'registerError',
   WORD_VALIDATION_FINISHED: 'wordValidationFinished',
 };
 
 export default {
   /**
-   * Add passed item to list
+   * Handle start game case, set loading status while getting configuration
    *
    * @param {Object} state
    */
-  [MUTATIONS.LOAD_START](state) {
+  [MUTATIONS.START_GAME](state) {
     state.isLoading = true;
   },
 
   /**
-   * Add passed item to list
+   * Save received configuration and start a game
    *
    * @param {Object} state
    * @param {Object} p Payload
@@ -32,9 +34,9 @@ export default {
   [MUTATIONS.LOAD_SUCCESS](state, { configuration, startTime }) {
     Object.assign(
       state,
-      initialState,
+      deepCopy(initialState),
       {
-        items: configuration,
+        configuration,
         startTime,
       },
     );
@@ -53,7 +55,16 @@ export default {
   },
 
   /**
-   * Update word status from attempts collection
+   * Mark game as finished
+   *
+   * @param {Object} state
+   */
+  [MUTATIONS.FINISH_GAME](state) {
+    state.isFinished = true;
+  },
+
+  /**
+   * Update word validation status
    *
    * @param {Object} state
    * @param {Object} p

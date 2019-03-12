@@ -11,7 +11,7 @@ export default {
    * @param {Function} context.commit
    */
   startGame({ commit }) {
-    commit(MUTATIONS.LOAD_START);
+    commit(MUTATIONS.START_GAME);
 
     Api
       .get('/getConfiguration')
@@ -20,6 +20,15 @@ export default {
 
         commit(MUTATIONS.LOAD_SUCCESS, { configuration, startTime });
       });
+  },
+
+  /**
+   * Finish the game
+   *
+   * @param {Object} context
+   */
+  finishGame({ commit }) {
+    commit(MUTATIONS.FINISH_GAME);
   },
 
   /**
@@ -59,7 +68,7 @@ export default {
       .findIndex(item => item.word.toLowerCase() === word.toLowerCase()) !== -1;
 
     if (wasAddedBefore) {
-      const errorMessage = `You've already checked the word "${word}"`;
+      const errorMessage = `You've already tried the word "${word}"`;
       commit(MUTATIONS.REGISTER_ERROR, errorMessage);
 
       return;
