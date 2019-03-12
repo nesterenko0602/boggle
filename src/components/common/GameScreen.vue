@@ -54,7 +54,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import 'styles/variables.scss';
+
   .game-screen__main {
     display: flex;
   }
@@ -66,6 +68,7 @@ export default {
   }
 
   .game-screen__statistics-line {
+    border-bottom: 1px solid $grey-lighter;
     display: flex;
     justify-content: space-between;
   }

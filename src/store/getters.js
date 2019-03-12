@@ -26,6 +26,15 @@ export default {
   getAttempts: state => state.attempts,
 
   /**
+   * Get all user's in DESC chronological order
+   *
+   * @param {Object} state
+   * @param {Object} getters
+   * @returns {Array.<Object>}
+   */
+  getAttemptsSortedByTime: (state, getters) => getters.getAttempts.sort((a, b) => b.time - a.time),
+
+  /**
    * Get game start time
    *
    * @param {Object} state

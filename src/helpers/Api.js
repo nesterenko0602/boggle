@@ -17,7 +17,8 @@ function getRandomDelay() {
 }
 
 /**
- * 
+ * Response composing helper
+ *
  * @param {Function} fn Function to invoke (resolver or rejector)
  * @param {any} body Reponse body
  */
@@ -39,7 +40,10 @@ export default {
 
     switch (url) {
       case '/getConfiguration':
-        response(resolve, mockData.configuration)
+        response(resolve, mockData.configuration);
+        break;
+      case '/wordValidation':
+        response(resolve, { isValid: Math.random() > 0.25 });
         break;
       default:
         break;

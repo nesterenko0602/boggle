@@ -57,6 +57,7 @@ export default {
     const attempts = getters.getAttempts;
     const wasAddedBefore = attempts
       .findIndex(item => item.word.toLowerCase() === word.toLowerCase()) !== -1;
+
     if (wasAddedBefore) {
       const errorMessage = `You've already checked the word "${word}"`;
       commit(MUTATIONS.REGISTER_ERROR, errorMessage);
@@ -64,6 +65,14 @@ export default {
       return;
     }
 
-    commit(MUTATIONS.REGISTER_ATTEMPT, word);
+    const time = new Date().getTime();
+
+    commit(MUTATIONS.REGISTER_ATTEMPT, { word, time });
+
+    Api
+      .get('/wordValidation', { word })
+      .then(({ isValid }) => {
+        commit(MUTATIONS.WORD_VALIDATION_FINISHED, { word, isValid });
+      });
   },
 };

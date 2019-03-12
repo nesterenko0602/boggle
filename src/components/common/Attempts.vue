@@ -20,7 +20,7 @@ export default {
   name: 'Attempts',
   computed: {
     ...mapGetters({
-      attempts: 'getAttempts',
+      attempts: 'getAttemptsSortedByTime',
     }),
   },
 };
@@ -34,7 +34,7 @@ $line-height: 24;
 .attempts__wrapper {
   color: $grey-dark;
   line-height: unquote($line-height + 'px');
-  margin-top: 10px;
+  margin-top: 5px;
   max-height: unquote($line-height * 7.5 + 'px');
   overflow: scroll;
   position: relative;

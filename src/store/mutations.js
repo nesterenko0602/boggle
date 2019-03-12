@@ -8,6 +8,7 @@ export const MUTATIONS = {
   REGISTER_ATTEMPT: 'registerAttempt',
   DROP_ERROR: 'dropError',
   REGISTER_ERROR: 'registerError',
+  WORD_VALIDATION_FINISHED: 'wordValidationFinished',
 };
 
 export default {
@@ -43,10 +44,25 @@ export default {
    * Add new word to attempts list
    *
    * @param {Object} state
-   * @param {string} word Word to add
+   * @param {Object} p
+   * @param {string} p.word Word to add
+   * @param {string} p.time Timestamp
    */
-  [MUTATIONS.REGISTER_ATTEMPT](state, word) {
-    state.attempts.push({ word, status: CHECK_STATUSES.PENDING });
+  [MUTATIONS.REGISTER_ATTEMPT](state, { word, time }) {
+    state.attempts.push({ word, time, status: CHECK_STATUSES.PENDING });
+  },
+
+  /**
+   * Update word status from attempts collection
+   *
+   * @param {Object} state
+   * @param {Object} p
+   * @param {string} p.word Validated word
+   * @param {string} p.isValid Validation status
+   */
+  [MUTATIONS.WORD_VALIDATION_FINISHED](state, { word, isValid }) {
+    const validatedWord = state.attempts.find(item => item.word === word);
+    validatedWord.status = isValid ? CHECK_STATUSES.SUCCESS : CHECK_STATUSES.ERROR;
   },
 
   /**
