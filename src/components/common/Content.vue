@@ -5,7 +5,10 @@
       <StartScreen />
     </template>
     <template v-if="appState === APP_STATES.GAME">
-      <TextHeader><Timer /> seconds left...</TextHeader>
+      <TextHeader>
+        <Timer @finished="finishGame" />
+        seconds left...
+      </TextHeader>
       <GameScreen />
     </template>
     <template v-if="appState === APP_STATES.FINISH">
@@ -16,7 +19,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 import FinishScreen from 'components/common/FinishScreen';
 import GameScreen from 'components/common/GameScreen';
@@ -59,6 +62,11 @@ export default {
 
       return APP_STATES.GAME;
     },
+  },
+  methods: {
+    ...mapActions([
+      'finishGame',
+    ]),
   },
 };
 </script>

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 
 import { GAME_DURATION } from 'constants/constants';
 
@@ -34,9 +34,6 @@ export default {
     this.timerLoop();
   },
   methods: {
-    ...mapActions([
-      'finishGame',
-    ]),
     timerLoop() {
       const timeDifference = parseInt(
         (new Date().getTime() - this.startTime) / 1000,
@@ -44,7 +41,7 @@ export default {
       );
 
       if (timeDifference > GAME_DURATION) {
-        this.finishGame();
+        this.$emit('finished');
         return;
       }
 
