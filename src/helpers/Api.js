@@ -2,8 +2,11 @@
  * Mock API
  */
 
+/**
+ * Mocked data
+ */
 const mockData = {
-  configuration: ['A', 'C', 'E', 'D', 'L', 'U', 'G', '*', 'E', '*', 'H', 'T', 'G', 'A', 'F', 'K'],
+  configuration: ['T', 'A', 'P', '*', 'E', 'A', 'K', 'S', 'O', 'B', 'R', 'S', 'S', '*', 'X', 'D'],
 };
 
 /**
@@ -14,6 +17,15 @@ function getRandomDelay() {
   const min = 200;
 
   return Math.random() * (max - min) + min;
+}
+
+/**
+ * Validator function
+ *
+ * @param {string} word Word to validate
+ */
+function validateWord(word) {
+  return Math.random() > 0.25;
 }
 
 /**
@@ -29,7 +41,7 @@ function response(fn, body) {
 }
 
 export default {
-  get(url) {
+  get(url, params) {
     let resolve = null;
 
     const responsePromise = new Promise((innerResolve) => {
@@ -41,7 +53,7 @@ export default {
         response(resolve, mockData.configuration);
         break;
       case '/wordValidation':
-        response(resolve, { isValid: Math.random() > 0.25 });
+        response(resolve, { isValid: validateWord(params.word) });
         break;
       default:
         break;
