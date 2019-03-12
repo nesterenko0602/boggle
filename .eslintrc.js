@@ -8,11 +8,13 @@ module.exports = {
     '@vue/airbnb',
   ],
   rules: {
+
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
       vue: 'never'
     }],
+    'import/prefer-default-export': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
