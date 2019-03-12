@@ -43,7 +43,7 @@ export default {
   getStartTime: state => state.startTime,
 
   /**
-   * Get is game finished
+   * Is game finished?
    *
    * @param {Object} state
    * @returns {boolean}
@@ -51,7 +51,7 @@ export default {
   getIsFinished: state => state.isFinished,
 
   /**
-   * Get is game started
+   * Is game started?
    *
    * @param {Object} state
    * @returns {boolean}
@@ -59,7 +59,7 @@ export default {
   getIsLoading: state => state.isLoading,
 
   /**
-   * Get amount of found words
+   * Get count of found words
    *
    * @param {Object} state
    * @param {Object} getters

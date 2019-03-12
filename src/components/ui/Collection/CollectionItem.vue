@@ -8,6 +8,9 @@
 export default {
   name: 'CollectionItem',
   props: {
+    /**
+     * Configuration's letter
+     */
     item: {
       type: String,
       required: true,

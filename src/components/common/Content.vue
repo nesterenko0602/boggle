@@ -21,15 +21,15 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 
-import FinishScreen from 'components/common/FinishScreen';
-import GameScreen from 'components/common/GameScreen';
-import StartScreen from 'components/common/StartScreen';
+import FinishScreen from 'components/common/GameScreens/FinishScreen';
+import GameScreen from 'components/common/GameScreens/GameScreen';
+import StartScreen from 'components/common/GameScreens/StartScreen';
 import TextHeader from 'components/ui/TextHeader';
 import Timer from 'components/ui/Timer';
 import { APP_STATES } from 'constants/constants';
 
 export default {
-  name: 'Board',
+  name: 'Content',
   components: {
     FinishScreen,
     GameScreen,
@@ -45,12 +45,24 @@ export default {
       startTime: 'getStartTime',
       isFinished: 'getIsFinished',
     }),
+
+    /**
+     * Get time difference between now and game start time
+     *
+     * @returns {number}
+     */
     timeDifference() {
       return parseInt(
         (new Date().getTime() - this.startTime) / 1000,
         10,
       );
     },
+
+    /**
+     * Actual game's flow stage
+     *
+     * @returns {string}
+     */
     appState() {
       if (!this.startTime) {
         return APP_STATES.START;

@@ -31,11 +31,9 @@ function response(fn, body) {
 export default {
   get(url) {
     let resolve = null;
-    let reject = null;
 
-    const responsePromise = new Promise((innerResolve, innerReject) => {
+    const responsePromise = new Promise((innerResolve) => {
       resolve = innerResolve;
-      reject = innerReject;
     });
 
     switch (url) {

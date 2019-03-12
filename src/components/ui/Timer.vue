@@ -21,6 +21,12 @@ export default {
     ...mapGetters({
       startTime: 'getStartTime',
     }),
+
+    /**
+     * Get classes for wrapper element
+     *
+     * @returns {Array}
+     */
     classNames() {
       return [
         'timer__wrapper',
@@ -34,6 +40,9 @@ export default {
     this.timerLoop();
   },
   methods: {
+    /**
+     * Timer ticks handler
+     */
     timerLoop() {
       const timeDifference = parseInt(
         (new Date().getTime() - this.startTime) / 1000,

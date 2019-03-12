@@ -13,6 +13,9 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'Button',
   props: {
+    /**
+     * Text on the button
+     */
     value: {
       default: '',
       required: true,

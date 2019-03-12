@@ -13,7 +13,7 @@
       </div>
       <div class="game-screen__aside">
         <div class="game-screen__statistics-line">
-          Found words
+          Found words:
           <div class="game-screen__statistics-value">
             {{ foundWords }}
           </div>
@@ -33,7 +33,7 @@ import ErrorMessage from 'components/ui/ErrorMessage';
 import Input from 'components/ui/Input';
 
 export default {
-  name: 'StartScreen',
+  name: 'GameScreen',
   components: {
     Attempts,
     Collection,

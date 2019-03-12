@@ -17,6 +17,9 @@ export default {
     CollectionItem,
   },
   props: {
+    /**
+     * List of collection items (letters of configuration)
+     */
     items: {
       type: Array,
       required: true,

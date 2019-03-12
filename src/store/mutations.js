@@ -1,8 +1,9 @@
+/* eslint-disable no-param-reassign */
+
 import { CHECK_STATUSES } from 'constants/constants';
 import { deepCopy } from 'helpers/utils';
 import { initialState } from 'store/state';
 
-/* eslint-disable no-param-reassign */
 export const MUTATIONS = {
   DROP_ERROR: 'dropError',
   FINISH_GAME: 'finishGame',

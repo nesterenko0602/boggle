@@ -14,7 +14,7 @@ import { mapGetters } from 'vuex';
 import Icon from 'components/ui/Icon';
 
 export default {
-  name: 'Label',
+  name: 'ErrorMessage',
   components: {
     Icon,
   },
@@ -25,6 +25,8 @@ export default {
 
     /**
      * Whether error exists?
+     *
+     * @returns {boolean}
      */
     hasError() {
       return Boolean(this.error);

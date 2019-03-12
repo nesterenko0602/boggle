@@ -6,11 +6,6 @@ export const KEY_CODES = {
 };
 
 /**
- * LocalStorage key name to keep tasks list
- */
-export const STORAGE_NAME = 'ChainStackToDoList';
-
-/**
  * Duration of one game in seconds
  */
 export const GAME_DURATION = 60;

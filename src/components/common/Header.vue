@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header__wrapper {
   flex: 0 0 auto;
   margin: 60px auto 30px;
