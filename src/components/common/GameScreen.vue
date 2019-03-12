@@ -8,7 +8,7 @@
     <div class="game-screen__main">
       <div class="game-screen__board">
         <Collection
-          :items="items"
+          :items="configuration"
         />
       </div>
       <div class="game-screen__aside">
@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      items: 'getConfiguration',
+      configuration: 'getConfiguration',
       foundWords: 'getFoundWords',
     }),
   },
