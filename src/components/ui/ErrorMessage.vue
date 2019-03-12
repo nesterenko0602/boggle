@@ -4,7 +4,7 @@
       name="error"
       size="14"
     />
-    This word was typed earlier
+    {{ error }}
   </div>
 </template>
 
@@ -19,12 +19,16 @@ export default {
     Icon,
   },
   computed: {
-    /**
-     * @inheritdoc
-     */
     ...mapGetters({
-      hasError: 'getDuplicateError',
+      error: 'getError',
     }),
+
+    /**
+     * Whether error exists?
+     */
+    hasError() {
+      return Boolean(this.error);
+    },
 
     /**
      * List of class names for input field
@@ -52,7 +56,7 @@ export default {
   display: flex;
   font-size: 14px;
   height: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   opacity: 0;
   transition: opacity .3s ease;
 

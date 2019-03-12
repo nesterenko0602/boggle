@@ -2,7 +2,7 @@
  * Initial app state
  */
 export const initialState = {
-  duplicateError: false,
+  error: false,
   items: [],
   attempts: [],
   startTime: null,

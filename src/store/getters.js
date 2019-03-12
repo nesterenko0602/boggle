@@ -7,7 +7,7 @@ export default {
    * @param {Object} state
    * @returns {string}
    */
-  getDuplicateError: state => state.duplicateError,
+  getError: state => state.error,
 
   /**
    * Get current configuration

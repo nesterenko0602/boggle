@@ -102,7 +102,7 @@ export default {
 @import 'styles/variables.scss';
 
 .input__wrapper {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   position: relative;
 
   &.input__wrapper--filled {
