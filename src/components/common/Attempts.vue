@@ -51,4 +51,17 @@ $line-height: 24;
 .attempts__item--error {
   color: $alert;
 }
+
+@media screen and (max-width: $mobile-width) {
+  .attempts__wrapper {
+    max-height: initial;
+    overflow: visible;
+  }
+
+  .attempts__item {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
+  }
+}
 </style>

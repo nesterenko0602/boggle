@@ -10,7 +10,7 @@ const getWrapper = shallowWithRequiredProps(
     getters: {
       getIsLoading: () => false,
     },
-  }
+  },
 );
 
 describe('StartScreen', () => {

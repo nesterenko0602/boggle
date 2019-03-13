@@ -88,8 +88,10 @@ export default {
   max-width: $mobile-width;
   padding: 12px 32px 32px;
   width: $mobile-width;
+}
 
-  @media screen and (max-width: $mobile-width) {
+@media screen and (max-width: $mobile-width) {
+  .content__wrapper {
     border-radius: 0;
     width: 100%;
   }
