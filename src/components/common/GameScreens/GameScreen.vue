@@ -15,7 +15,7 @@
         <div class="game-screen__statistics-line">
           Found words:
           <div class="game-screen__statistics-value">
-            {{ foundWords }}
+            {{ countOfFoundWords }}
           </div>
         </div>
         <Attempts />
@@ -43,7 +43,7 @@ export default {
   computed: {
     ...mapGetters({
       configuration: 'getConfiguration',
-      foundWords: 'getFoundWords',
+      countOfFoundWords: 'getCountOfFoundWords',
     }),
   },
   methods: {

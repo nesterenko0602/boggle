@@ -8,21 +8,21 @@ const getWrapper = shallowWithRequiredProps(
   FinishScreen,
   {
     getters: {
-      getFoundWords: () => 3,
+      getCountOfFoundWords: () => 3,
     },
   },
 );
 
 describe('FinishScreen', () => {
   it('renders correct number of words', () => {
-    const foundWords = 5;
+    const countOfFoundWords = 5;
     const wrapper = getWrapper({}, {
       getters: {
-        getFoundWords: () => foundWords,
+        getCountOfFoundWords: () => countOfFoundWords,
       },
     });
 
-    expect(wrapper.find('.finish-screen__numbers').text()).toBe(`${foundWords} words`);
+    expect(wrapper.find('.finish-screen__numbers').text()).toBe(`${countOfFoundWords} words`);
   });
 
   it('renders correct game duration value', () => {

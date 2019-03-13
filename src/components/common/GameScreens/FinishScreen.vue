@@ -3,7 +3,7 @@
     <div class="finish-screen__text">
       You have found
       <span class="finish-screen__numbers">
-        {{ foundWords }} {{ foundWords === 1 ? 'word' : 'words' }}
+        {{ countOfFoundWords }} {{ countOfFoundWords === 1 ? 'word' : 'words' }}
       </span>
       in
       <b>{{ GAME_DURATION }} seconds</b>.
@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      foundWords: 'getFoundWords',
+      countOfFoundWords: 'getCountOfFoundWords',
     }),
   },
   methods: {

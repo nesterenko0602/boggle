@@ -65,7 +65,7 @@ export default {
    * @param {Object} getters
    * @returns {Number}
    */
-  getFoundWords: (state, getters) => getters
+  getCountOfFoundWords: (state, getters) => getters
     .getAttempts
     .filter(item => item.status === CHECK_STATUSES.SUCCESS)
     .length,

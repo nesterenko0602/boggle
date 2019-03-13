@@ -11,7 +11,7 @@ const getWrapper = shallowWithRequiredProps(
   GameScreen,
   {
     getters: {
-      getFoundWords: () => 3,
+      getCountOfFoundWords: () => 3,
       getConfiguration: () => DEFAULT_CONFIGURATION,
     },
     actions: {
@@ -59,15 +59,15 @@ describe('GameScreen', () => {
   });
 
   it('renders correct amount of found words', () => {
-    const FOUND_WORDS = 66;
+    const FOUND_WORDS_COUNT = 66;
 
     const wrapper = getWrapper({}, {
       getters: {
-        getFoundWords: () => FOUND_WORDS,
+        getCountOfFoundWords: () => FOUND_WORDS_COUNT,
       },
     });
 
     expect(wrapper.find('.game-screen__statistics-value').text())
-      .toBe(FOUND_WORDS.toString());
+      .toBe(FOUND_WORDS_COUNT.toString());
   });
 });
