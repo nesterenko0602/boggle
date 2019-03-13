@@ -24,7 +24,7 @@ function getRandomDelay() {
  *
  * @param {string} word Word to validate
  */
-function validateWord(word) {
+function validateWord() {
   return Math.random() > 0.25;
 }
 

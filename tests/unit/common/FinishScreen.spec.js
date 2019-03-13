@@ -21,16 +21,16 @@ describe('FinishScreen', () => {
         getFoundWords: () => foundWords,
       },
     });
-    
+
     expect(wrapper.find('.finish-screen__numbers').text()).toBe(`${foundWords} words`);
   });
 
   it('renders correct game duration value', () => {
     const wrapper = getWrapper();
-    
+
     expect(wrapper.find('.finish-screen__text b').text()).toBe(`${GAME_DURATION} seconds`);
   });
-  
+
   it('emits on button click', () => {
     const startGame = jest.fn();
     const wrapper = getWrapper({}, { actions: { startGame } });

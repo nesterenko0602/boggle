@@ -1,13 +1,13 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
-	configureWebpack : {
-		resolve: {
-      modules : [
-        path.resolve("./src"),
+  configureWebpack: {
+    resolve: {
+      modules: [
+        path.resolve('./src'),
         path.resolve('./static'),
-        path.resolve("./node_modules")
-      ]
+        path.resolve('./node_modules'),
+      ],
     },
-	}
-}
+  },
+};

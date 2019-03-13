@@ -34,7 +34,7 @@ export default {
      */
     handleClick() {
       this.$emit('click');
-    }
+    },
   },
 };
 </script>

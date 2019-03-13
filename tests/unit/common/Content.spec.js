@@ -69,7 +69,7 @@ describe('Content', () => {
       {
         getters: {
           getStartTime: () => new Date().getTime(),
-          getIsFinished: () => true,          
+          getIsFinished: () => true,
         },
       },
     );

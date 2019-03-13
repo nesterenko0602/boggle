@@ -32,11 +32,11 @@ describe('GameScreen', () => {
       const word = 'testWord';
       const sendWord = jest.fn();
       const wrapper = getWrapper({}, { actions: { sendWord } });
-  
+
       wrapper.find(Input).vm.$emit('submit', word);
-  
+
       expect(sendWord)
-      .toHaveBeenCalledWith(expect.any(Object), word, undefined);
+        .toHaveBeenCalledWith(expect.any(Object), word, undefined);
     });
   });
 

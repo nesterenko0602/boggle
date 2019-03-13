@@ -1,4 +1,4 @@
-import Api from 'helpers/Api.js';
+import Api from 'helpers/Api';
 
 import { MIN_WORD_LENGTH } from 'constants/constants';
 import { MUTATIONS } from 'store/mutations';

@@ -23,22 +23,22 @@ describe('Timer', () => {
       expect(wrapper.find('.timer__wrapper').text()).toBe(time.toString());
 
       done();
-    })
+    });
   });
 
   it('applies class when less than 10 seconds left', () => {
     const wrapper = getWrapper();
 
     expect(wrapper.find('.timer__wrapper').classes('timer__wrapper--alert')).toBe(false);
-    wrapper.setData({ last10Seconds: true });    
+    wrapper.setData({ last10Seconds: true });
     expect(wrapper.find('.timer__wrapper').classes('timer__wrapper--alert')).toBe(true);
   });
 
   it('emits finished event when timer has finished', () => {
     [GAME_DURATION, GAME_DURATION + 1].forEach((timeDifference) => {
       const startTime = new Date().getTime() - (1000 * timeDifference);
-      const wrapper = getWrapper({}, { getters: { getStartTime: () => startTime} });
-  
+      const wrapper = getWrapper({}, { getters: { getStartTime: () => startTime } });
+
       const gameShouldBeFinished = timeDifference === GAME_DURATION + 1;
 
       if (gameShouldBeFinished) {

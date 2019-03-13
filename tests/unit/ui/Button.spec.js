@@ -15,10 +15,10 @@ describe('Button', () => {
   it('renders passed text', () => {
     const buttonText = 'text text';
     const wrapper = getWrapper({ value: buttonText });
-    
+
     expect(wrapper.find('button').text()).toBe(buttonText);
   });
-  
+
   it('disabled when loading', () => {
     [false, true].forEach((isLoading) => {
       const wrapper = getWrapper({}, { getters: { getIsLoading: () => isLoading } });

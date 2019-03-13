@@ -22,13 +22,13 @@ describe('ErrorMessage', () => {
 
     expect(wrapper.text()).toBe(errorText);
   });
-  
+
   it('applies visibility class when error', () => {
     [false, true].forEach((hasError) => {
       const wrapper = getWrapper({}, hasError ? getterWithError : getterWithoutError);
 
       expect(
-        wrapper.find('.error-message__wrapper').classes('error-message__wrapper--visible')
+        wrapper.find('.error-message__wrapper').classes('error-message__wrapper--visible'),
       )
         .toBe(hasError);
     });
