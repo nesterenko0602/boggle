@@ -47,19 +47,7 @@ export default {
     }),
 
     /**
-     * Get time difference between now and game start time
-     *
-     * @returns {number}
-     */
-    timeDifference() {
-      return parseInt(
-        (new Date().getTime() - this.startTime) / 1000,
-        10,
-      );
-    },
-
-    /**
-     * Actual game's flow stage
+     * Actual game stage
      *
      * @returns {string}
      */
