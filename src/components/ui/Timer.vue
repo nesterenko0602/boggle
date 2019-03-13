@@ -5,12 +5,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 import { GAME_DURATION } from 'constants/constants';
 
 export default {
   name: 'Timer',
+  props: {
+    /**
+     * Start timestamp
+     */
+    startTime: {
+      type: Number,
+      required: true,
+    },
+  },
   data() {
     return {
       timer: GAME_DURATION,
@@ -18,10 +25,6 @@ export default {
     };
   },
   computed: {
-    ...mapGetters({
-      startTime: 'getStartTime',
-    }),
-
     /**
      * Get classes for wrapper element
      *
@@ -49,7 +52,7 @@ export default {
         10,
       );
 
-      if (timeDifference > GAME_DURATION) {
+      if (timeDifference >= GAME_DURATION) {
         this.$emit('finished');
         return;
       }

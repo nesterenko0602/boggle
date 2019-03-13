@@ -6,7 +6,10 @@
     </template>
     <template v-if="appState === APP_STATES.GAME">
       <TextHeader>
-        <Timer @finished="finishGame" />
+        <Timer
+          :start-time="startTime"
+          @finished="finishGame"
+        />
         seconds left...
       </TextHeader>
       <GameScreen />

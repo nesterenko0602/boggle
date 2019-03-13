@@ -8,8 +8,8 @@ import { GAME_DURATION } from 'constants/constants';
 const getWrapper = shallowWithRequiredProps(
   Timer,
   {
-    getters: {
-      getStartTime: () => null,
+    props: {
+      startTime: new Date().getTime(),
     },
   },
 );
@@ -31,18 +31,22 @@ describe('Timer', () => {
     const wrapper = getWrapper();
 
     expect(wrapper.find('.timer__wrapper').classes('timer__wrapper--alert')).toBe(false);
-    wrapper.setData({ last10Seconds: true });
+
+    wrapper.setProps({ startTime: new Date().getTime() - (1000 * (GAME_DURATION - 9)) });
+    wrapper.vm.timerLoop();
+
     expect(wrapper.find('.timer__wrapper').classes('timer__wrapper--alert')).toBe(true);
   });
 
   it('emits finished event when timer has finished', () => {
-    [GAME_DURATION, GAME_DURATION + 1].forEach((timeDifference) => {
-      const startTime = new Date().getTime() - (1000 * timeDifference);
-      const wrapper = getWrapper({}, { getters: { getStartTime: () => startTime } });
+    const wrapper = getWrapper();
 
-      const gameShouldBeFinished = timeDifference === GAME_DURATION + 1;
+    [1, 0].forEach((timeDifference) => {
+      const startTime = new Date().getTime() - (1000 * (GAME_DURATION - timeDifference));
+      wrapper.setProps({ startTime });
+      wrapper.vm.timerLoop();
 
-      if (gameShouldBeFinished) {
+      if (!timeDifference) {
         expect(wrapper.emitted().finished.length).toBe(1);
         return;
       }
