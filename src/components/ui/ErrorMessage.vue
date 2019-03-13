@@ -9,8 +9,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 import Icon from 'components/ui/Icon';
 
 export default {
@@ -18,11 +16,16 @@ export default {
   components: {
     Icon,
   },
+  props: {
+    /**
+     * Error text to display
+     */
+    error: {
+      required: true,
+      validator: prop => typeof prop === 'string' || prop === null,
+    },
+  },
   computed: {
-    ...mapGetters({
-      error: 'getError',
-    }),
-
     /**
      * Whether error exists?
      *

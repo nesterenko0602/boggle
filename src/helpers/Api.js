@@ -13,8 +13,8 @@ const mockData = {
  * Returns a random response delay for requests
  */
 function getRandomDelay() {
-  const max = 1000;
-  const min = 200;
+  const max = 1500;
+  const min = 300;
 
   return Math.random() * (max - min) + min;
 }

@@ -13,6 +13,7 @@ const getWrapper = shallowWithRequiredProps(
     getters: {
       getCountOfFoundWords: () => 3,
       getConfiguration: () => DEFAULT_CONFIGURATION,
+      getError: () => null,
     },
     actions: {
       sendWord: jest.fn(),

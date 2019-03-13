@@ -4,7 +4,9 @@
       placeholder="Enter the word"
       @submit="sendWord"
     />
-    <ErrorMessage />
+    <ErrorMessage
+      :error="error"
+    />
     <div class="game-screen__main">
       <div class="game-screen__board">
         <Collection
@@ -44,6 +46,7 @@ export default {
     ...mapGetters({
       configuration: 'getConfiguration',
       countOfFoundWords: 'getCountOfFoundWords',
+      error: 'getError',
     }),
   },
   methods: {

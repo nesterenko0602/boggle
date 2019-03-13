@@ -1,31 +1,19 @@
 import { shallowWithRequiredProps } from 'tests/helpers';
 import ErrorMessage from 'components/ui/ErrorMessage';
 
-const errorText = 'ErrorText';
-const getterWithError = {
-  getters: {
-    getError: () => errorText,
-  },
-};
-
-const getterWithoutError = {
-  getters: {
-    getError: () => null,
-  },
-};
-
 const getWrapper = shallowWithRequiredProps(ErrorMessage);
 
 describe('ErrorMessage', () => {
   it('renders error text', () => {
-    const wrapper = getWrapper({}, getterWithError);
+    const errorText = 'ErrorText';
+    const wrapper = getWrapper({ error: errorText });
 
     expect(wrapper.text()).toBe(errorText);
   });
 
   it('applies visibility class when error', () => {
     [false, true].forEach((hasError) => {
-      const wrapper = getWrapper({}, hasError ? getterWithError : getterWithoutError);
+      const wrapper = getWrapper({ error: hasError ? 'error' : null });
 
       expect(
         wrapper.find('.error-message__wrapper').classes('error-message__wrapper--visible'),
