@@ -9,6 +9,7 @@ const getWrapper = shallowWithRequiredProps(
   {
     getters: {
       getCountOfFoundWords: () => 3,
+      getIsLoading: () => false,
     },
   },
 );

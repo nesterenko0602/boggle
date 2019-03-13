@@ -4,9 +4,9 @@ import Button from 'components/ui/Button';
 const getWrapper = shallowWithRequiredProps(
   Button,
   {
-    props: { value: 'Button text' },
-    getters: {
-      getIsLoading: () => false,
+    props: {
+      value: 'Button text',
+      isLoading: false,
     },
   },
 );
@@ -21,7 +21,7 @@ describe('Button', () => {
 
   it('disabled when loading', () => {
     [false, true].forEach((isLoading) => {
-      const wrapper = getWrapper({}, { getters: { getIsLoading: () => isLoading } });
+      const wrapper = getWrapper({ isLoading });
       const inputElement = wrapper.find('button');
 
       expect(inputElement.attributes('disabled')).toBe(isLoading ? 'disabled' : undefined);

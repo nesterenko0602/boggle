@@ -4,7 +4,14 @@ import StartScreen from 'components/common/GameScreens/StartScreen';
 import Button from 'components/ui/Button';
 import { GAME_DURATION } from 'constants/constants';
 
-const getWrapper = shallowWithRequiredProps(StartScreen);
+const getWrapper = shallowWithRequiredProps(
+  StartScreen,
+  {
+    getters: {
+      getIsLoading: () => false,
+    },
+  }
+);
 
 describe('StartScreen', () => {
   it('renders correct game duration value', () => {

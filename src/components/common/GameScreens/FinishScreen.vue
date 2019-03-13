@@ -10,6 +10,7 @@
     </div>
     <Button
       value="Let's play again!"
+      :is-loading="isLoading"
       @click="startGame"
     />
   </div>
@@ -32,6 +33,7 @@ export default {
   computed: {
     ...mapGetters({
       countOfFoundWords: 'getCountOfFoundWords',
+      isLoading: 'getIsLoading',
     }),
   },
   methods: {

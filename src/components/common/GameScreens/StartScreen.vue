@@ -5,13 +5,14 @@
     </div>
     <Button
       value="Let's start!"
+      :is-loading="isLoading"
       @click="startGame"
     />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 import Button from 'components/ui/Button';
 import { GAME_DURATION } from 'constants/constants';
@@ -23,6 +24,11 @@ export default {
   },
   data() {
     return { GAME_DURATION };
+  },
+  computed: {
+    ...mapGetters({
+      isLoading: 'getIsLoading',
+    }),
   },
   methods: {
     ...mapActions([

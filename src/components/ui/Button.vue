@@ -9,11 +9,18 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'Button',
   props: {
+    /**
+     * Is interface waiting for response
+     */
+    isLoading: {
+      default: false,
+      required: true,
+      type: Boolean,
+    },
+
     /**
      * Text on the button
      */
@@ -22,11 +29,6 @@ export default {
       required: true,
       type: String,
     },
-  },
-  computed: {
-    ...mapGetters({
-      isLoading: 'getIsLoading',
-    }),
   },
   methods: {
     /**
