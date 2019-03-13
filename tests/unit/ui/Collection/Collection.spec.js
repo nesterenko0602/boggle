@@ -1,4 +1,5 @@
 import { shallowWithRequiredProps } from 'tests/helpers';
+
 import Collection from 'components/ui/Collection/Collection';
 import CollectionItem from 'components/ui/Collection/CollectionItem';
 

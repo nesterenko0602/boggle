@@ -1,6 +1,7 @@
 import Vue from 'vue';
 
 import { shallowWithRequiredProps } from 'tests/helpers';
+
 import Timer from 'components/ui/Timer';
 import { GAME_DURATION } from 'constants/constants';
 

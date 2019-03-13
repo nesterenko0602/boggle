@@ -1,4 +1,5 @@
 import { shallowWithRequiredProps } from 'tests/helpers';
+
 import Icon from 'components/ui/Icon';
 import Input from 'components/ui/Input';
 
