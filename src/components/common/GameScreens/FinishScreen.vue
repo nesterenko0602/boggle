@@ -10,7 +10,7 @@
     </div>
     <Button
       value="Let's play again!"
-      @click.native="startGame"
+      @click="startGame"
     />
   </div>
 </template>

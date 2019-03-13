@@ -5,7 +5,7 @@
     </div>
     <Button
       value="Let's start!"
-      @click.native="startGame"
+      @click="startGame"
     />
   </div>
 </template>

@@ -2,6 +2,7 @@
   <button
     type="button"
     :disabled="isLoading"
+    @click="handleClick"
   >
     {{ value }}
   </button>
@@ -26,6 +27,14 @@ export default {
     ...mapGetters({
       isLoading: 'getIsLoading',
     }),
+  },
+  methods: {
+    /**
+     * Button click event handler
+     */
+    handleClick() {
+      this.$emit('click');
+    }
   },
 };
 </script>
