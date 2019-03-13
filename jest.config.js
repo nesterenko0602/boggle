@@ -10,9 +10,7 @@ module.exports = {
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
     '^.+\\.jsx?$': 'babel-jest',
   },
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-  },
+  modulePaths: ['<rootDir>/src/', '<rootDir>'],
   snapshotSerializers: [
     'jest-serializer-vue',
   ],
