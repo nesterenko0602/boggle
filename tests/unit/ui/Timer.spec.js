@@ -51,6 +51,7 @@ describe('Timer', () => {
         return;
       }
 
+      expect(wrapper.emitted().updated[1]).toEqual([timeDifference]);
       expect(wrapper.emitted().finished).toBe(undefined);
     });
   });

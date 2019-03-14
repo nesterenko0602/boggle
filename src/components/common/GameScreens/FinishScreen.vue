@@ -3,10 +3,10 @@
     <div class="finish-screen__text">
       You have found
       <span class="finish-screen__numbers">
-        {{ countOfFoundWords }} {{ countOfFoundWords === 1 ? 'word' : 'words' }}
+        {{ countOfFoundWords }} {{ countOfFoundWords | pluralize('word') }}
       </span>
       in
-      <b>{{ GAME_DURATION }} seconds</b>.
+      <b>{{ GAME_DURATION }} {{ GAME_DURATION | pluralize('second') }}</b>.
     </div>
     <Button
       value="Let's play again!"

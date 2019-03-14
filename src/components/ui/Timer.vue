@@ -60,6 +60,8 @@ export default {
       this.timer = GAME_DURATION - timeDifference;
       this.last10Seconds = this.timer < 10;
 
+      this.$emit('updated', this.timer);
+
       setTimeout(this.timerLoop, 1000);
     },
   },

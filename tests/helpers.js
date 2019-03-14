@@ -2,6 +2,7 @@ import { createLocalVue, shallowMount } from '@vue/test-utils';
 import Vuex from 'vuex';
 
 import { CHECK_STATUSES, GAME_DURATION } from 'constants/constants';
+import 'filters';
 import { deepCopy } from 'helpers/utils';
 import initState from 'store/state';
 

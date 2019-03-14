@@ -61,6 +61,16 @@ describe('Content', () => {
       expect(finishGame)
         .toHaveBeenCalled();
     });
+
+    it('updates inner timer value when timer component throws update event', () => {
+      const newValue = 55;
+
+      expect(wrapper.vm.timer).toBe(0);
+
+      wrapper.find(Timer).vm.$emit('updated', newValue);
+
+      expect(wrapper.vm.timer).toBe(newValue);
+    });
   });
 
   describe('Finish stage', () => {

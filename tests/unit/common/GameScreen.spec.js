@@ -15,9 +15,6 @@ const getWrapper = shallowWithRequiredProps(
       getConfiguration: () => DEFAULT_CONFIGURATION,
       getError: () => null,
     },
-    actions: {
-      sendWord: jest.fn(),
-    },
   },
 );
 

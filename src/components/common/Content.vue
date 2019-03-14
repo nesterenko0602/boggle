@@ -8,9 +8,10 @@
       <TextHeader>
         <Timer
           :start-time="startTime"
+          @updated="timerUpdateHandler"
           @finished="finishGame"
         />
-        seconds left...
+        {{ timer | pluralize('second') }} left...
       </TextHeader>
       <GameScreen />
     </template>
@@ -41,7 +42,10 @@ export default {
     Timer,
   },
   data() {
-    return { APP_STATES };
+    return {
+      APP_STATES,
+      timer: 0,
+    };
   },
   computed: {
     ...mapGetters({
@@ -70,6 +74,15 @@ export default {
     ...mapActions([
       'finishGame',
     ]),
+
+    /**
+     * Handler of timer updates
+     *
+     * @param {Number} timerValue
+     */
+    timerUpdateHandler(timerValue) {
+      this.timer = timerValue;
+    },
   },
 };
 </script>
