@@ -7,10 +7,10 @@ import { initialState } from 'store/state';
 export const MUTATIONS = {
   DROP_ERROR: 'dropError',
   FINISH_GAME: 'finishGame',
-  START_GAME: 'loadStart',
   LOAD_SUCCESS: 'loadSuccess',
   REGISTER_ATTEMPT: 'registerAttempt',
   REGISTER_ERROR: 'registerError',
+  START_GAME: 'loadStart',
   WORD_VALIDATION_FINISHED: 'wordValidationFinished',
 };
 
@@ -22,6 +22,15 @@ export default {
    */
   [MUTATIONS.START_GAME](state) {
     state.isLoading = true;
+  },
+
+  /**
+   * Mark game as finished
+   *
+   * @param {Object} state
+   */
+  [MUTATIONS.FINISH_GAME](state) {
+    state.isFinished = true;
   },
 
   /**
@@ -53,15 +62,6 @@ export default {
    */
   [MUTATIONS.REGISTER_ATTEMPT](state, { word, time }) {
     state.attempts.push({ word, time, status: CHECK_STATUSES.PENDING });
-  },
-
-  /**
-   * Mark game as finished
-   *
-   * @param {Object} state
-   */
-  [MUTATIONS.FINISH_GAME](state) {
-    state.isFinished = true;
   },
 
   /**
