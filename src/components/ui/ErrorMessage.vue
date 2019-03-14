@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'styles/variables.scss';
+@import 'styles/variables';
 
 .error-message__wrapper {
   align-items: center;

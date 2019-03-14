@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'styles/variables.scss';
+@import 'styles/variables';
 
 .main__wrapper {
   flex: 1 1 auto;

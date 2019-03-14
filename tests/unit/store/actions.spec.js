@@ -1,9 +1,6 @@
-import Vue from 'vue';
-
 import { MIN_WORD_LENGTH } from 'constants/constants';
 import Actions from 'store/actions';
 import { MUTATIONS } from 'store/mutations';
-import { doesNotReject } from 'assert';
 
 jest.mock('helpers/Api', () => ({
   get(url, params) {
@@ -14,6 +11,8 @@ jest.mock('helpers/Api', () => ({
     if (url === '/wordValidation') {
       return Promise.resolve({ isValid: params.word === 'validWord' });
     }
+
+    return Promise.reject();
   },
 }));
 
@@ -62,14 +61,14 @@ describe('Actions', () => {
           {
             word,
             time: expect.any(Number),
-          }
+          },
         );
         expect(commit).toHaveBeenLastCalledWith(
           MUTATIONS.WORD_VALIDATION_FINISHED,
           {
             word,
             isValid: true,
-          }
+          },
         );
 
         done();
@@ -77,15 +76,9 @@ describe('Actions', () => {
   });
 
   describe('Validation', () => {
-    let commit;
-
-    beforeEach(() => {
-      commit = jest.fn();
-    });
-
     it('doesn\'t send short word', () => {
       const word = 'wo';
-  
+
       Actions.sendWord({ commit, getters: { getAttempts: [] } }, word);
 
       expect(commit).toHaveBeenLastCalledWith(
@@ -96,7 +89,7 @@ describe('Actions', () => {
 
     it('doesn\'t send words with prohibited symbols', () => {
       const word = 'w1o';
-  
+
       Actions.sendWord({ commit, getters: { getAttempts: [] } }, word);
 
       expect(commit).toHaveBeenLastCalledWith(
@@ -107,7 +100,7 @@ describe('Actions', () => {
 
     it('doesn\'t send repeated word', () => {
       const word = 'repeatedWord';
-  
+
       Actions.sendWord(
         {
           commit,
@@ -117,7 +110,7 @@ describe('Actions', () => {
             ],
           },
         },
-        word
+        word,
       );
 
       expect(commit).toHaveBeenLastCalledWith(

@@ -30,7 +30,8 @@ describe('Getters', () => {
 
   it('getAttemptsSortedByTime', () => {
     const initState = getVariousStates().game;
-    const sortedAttempts = Getters.getAttemptsSortedByTime(initState, { getAttempts: initState.attempts });
+    const sortedAttempts = Getters
+      .getAttemptsSortedByTime(initState, { getAttempts: initState.attempts });
 
     expect(sortedAttempts)
       .not
@@ -72,7 +73,7 @@ describe('Getters', () => {
         initState
           .attempts
           .filter(item => item.status === CHECK_STATUSES.SUCCESS)
-          .length
+          .length,
       );
   });
 });

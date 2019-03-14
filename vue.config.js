@@ -8,6 +8,7 @@ module.exports = {
         path.resolve('./static'),
         path.resolve('./node_modules'),
       ],
+      extensions: ['.scss', '.vue', '.js', '.json'],
     },
   },
 };

@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "npm run generate-icons && vue-cli-service serve",
     "build": "npm run generate-icons && vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:unit:watch": "vue-cli-service test:unit --watch",
     "generate-icons": "vsvg -s ./src/assets/svg -t ./static/svg"

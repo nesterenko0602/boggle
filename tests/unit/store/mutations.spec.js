@@ -27,7 +27,7 @@ describe('Mutations', () => {
 
     Mutations[MUTATIONS_NAMES.LOAD_SUCCESS](
       initState,
-      { configuration, startTime }
+      { configuration, startTime },
     );
 
     expect(initState).toEqual({
@@ -45,14 +45,14 @@ describe('Mutations', () => {
 
     Mutations[MUTATIONS_NAMES.REGISTER_ATTEMPT](
       initState,
-      { word, time }
+      { word, time },
     );
 
     expect(initState.attempts.length).toBe(currentAttemptsAmount + 1);
     expect(
-      initState.attempts.find(item => item.time === time)
+      initState.attempts.find(item => item.time === time),
     )
-      .toEqual({ word, time, status: CHECK_STATUSES.PENDING })
+      .toEqual({ word, time, status: CHECK_STATUSES.PENDING });
   });
 
   it(MUTATIONS_NAMES.WORD_VALIDATION_FINISHED, () => {
@@ -62,7 +62,7 @@ describe('Mutations', () => {
 
     Mutations[MUTATIONS_NAMES.REGISTER_ATTEMPT](
       initState,
-      { word, time }
+      { word, time },
     );
 
     Mutations[MUTATIONS_NAMES.WORD_VALIDATION_FINISHED](
@@ -76,7 +76,7 @@ describe('Mutations', () => {
   it(MUTATIONS_NAMES.REGISTER_ERROR, () => {
     const initState = getVariousStates().game;
     expect(initState.error).toBe(null);
-    
+
     const error = 'some error';
     Mutations[MUTATIONS_NAMES.REGISTER_ERROR](initState, error);
 

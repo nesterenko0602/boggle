@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'styles/variables.scss';
+@import 'styles/variables';
 
 .game-screen__main {
   display: flex;

@@ -87,6 +87,6 @@ export const getVariousStates = () => JSON.parse(
     error: {
       ...normalGameState,
       error: 'Some Error',
-    }
-  })
+    },
+  }),
 );
