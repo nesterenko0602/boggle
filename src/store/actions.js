@@ -13,7 +13,7 @@ export default {
   startGame({ commit }) {
     commit(MUTATIONS.START_GAME);
 
-    Api
+    return Api
       .get('/getConfiguration')
       .then((configuration) => {
         const startTime = new Date().getTime();
@@ -47,7 +47,7 @@ export default {
       const errorMessage = `You should suggest at least ${MIN_WORD_LENGTH} letter word`;
       commit(MUTATIONS.REGISTER_ERROR, errorMessage);
 
-      return;
+      return Promise.resolve();
     }
 
     /**
@@ -57,7 +57,7 @@ export default {
       const errorMessage = 'Only English letters allowed';
       commit(MUTATIONS.REGISTER_ERROR, errorMessage);
 
-      return;
+      return Promise.resolve();
     }
 
     /**
@@ -71,14 +71,14 @@ export default {
       const errorMessage = `You've already tried the word "${word}"`;
       commit(MUTATIONS.REGISTER_ERROR, errorMessage);
 
-      return;
+      return Promise.resolve();
     }
 
     const time = new Date().getTime();
 
     commit(MUTATIONS.REGISTER_ATTEMPT, { word, time });
 
-    Api
+    return Api
       .get('/wordValidation', { word })
       .then(({ isValid }) => {
         commit(MUTATIONS.WORD_VALIDATION_FINISHED, { word, isValid });
