@@ -2,6 +2,7 @@ import { createLocalVue, shallowMount } from '@vue/test-utils';
 import Vuex from 'vuex';
 
 import { CHECK_STATUSES, GAME_DURATION } from 'constants/constants';
+import { deepCopy } from 'helpers/utils';
 import initState from 'store/state';
 
 /**
@@ -75,18 +76,16 @@ const normalGameState = {
  *
  * @returns {Object}
  */
-export const getVariousStates = () => JSON.parse(
-  JSON.stringify({
-    start: initState,
-    game: normalGameState,
-    finish: {
-      ...normalGameState,
-      startTime: new Date().getTime() - 1000 * GAME_DURATION,
-      isFinished: true,
-    },
-    error: {
-      ...normalGameState,
-      error: 'Some Error',
-    },
-  }),
-);
+export const getVariousStates = () => deepCopy({
+  start: initState,
+  game: normalGameState,
+  finish: {
+    ...normalGameState,
+    startTime: new Date().getTime() - 1000 * GAME_DURATION,
+    isFinished: true,
+  },
+  error: {
+    ...normalGameState,
+    error: 'Some Error',
+  },
+});
