@@ -4,7 +4,7 @@ import { deepCopy } from 'helpers/utils';
  * Initial app state
  */
 export const initialState = {
-  error: false,
+  error: null,
   configuration: [],
   attempts: [],
   startTime: null,
