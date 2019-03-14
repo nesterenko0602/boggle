@@ -4,6 +4,7 @@
   >
     <input
       v-model="message"
+      ref="input"
       type="text"
       class="input"
       maxlength="16"
@@ -35,6 +36,11 @@ export default {
       type: String,
       default: '',
     },
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.$refs.input.focus();
+    })
   },
   data: function data() {
     return { message: '' };
