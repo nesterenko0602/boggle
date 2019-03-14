@@ -42,6 +42,7 @@ $line-height: 24;
 
 .attempts__item {
   list-style-type: square;
+  text-transform: capitalize;
 }
 
 .attempts__item--success {
@@ -59,8 +60,8 @@ $line-height: 24;
   }
 
   .attempts__item {
-    list-style-type: none;
     display: inline-block;
+    list-style-type: none;
     margin-right: 20px;
   }
 }
