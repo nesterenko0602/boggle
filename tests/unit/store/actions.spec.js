@@ -88,13 +88,13 @@ describe('Actions', () => {
     });
 
     it('doesn\'t send words with prohibited symbols', () => {
-      const word = 'w1o';
+      const word = 'not111valid222word';
 
       Actions.sendWord({ commit, getters: { getAttempts: [] } }, word);
 
       expect(commit).toHaveBeenLastCalledWith(
         MUTATIONS.REGISTER_ERROR,
-        'Only English letters allowed',
+        'Only Latin letters allowed',
       );
     });
 

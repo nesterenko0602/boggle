@@ -20,7 +20,14 @@ export default {
   },
   data() {
     return {
+      /**
+       * Current timer value
+       */
       timer: GAME_DURATION,
+
+      /**
+       * Less than 10 seconds left to game finish
+       */
       last10Seconds: false,
     };
   },

@@ -34,12 +34,12 @@ describe('Input', () => {
   it('emits on submit', () => {
     const wrapper = getWrapper();
     const inputElement = wrapper.find('input[type="text"]');
-    const message = 'test text';
-    inputElement.setValue(message);
+    const word = 'testword';
+    inputElement.setValue(word);
 
     wrapper.find(Icon).trigger('click');
 
     expect(wrapper.emitted().submit[0])
-      .toEqual([message]);
+      .toEqual([word]);
   });
 });

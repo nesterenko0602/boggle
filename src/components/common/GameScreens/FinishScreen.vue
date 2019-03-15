@@ -28,7 +28,12 @@ export default {
     Button,
   },
   data() {
-    return { GAME_DURATION };
+    return {
+      /**
+       * @inheritdoc
+       */
+      GAME_DURATION,
+    };
   },
   computed: {
     ...mapGetters({

@@ -43,7 +43,14 @@ export default {
   },
   data() {
     return {
+      /**
+       * @inheritdoc
+       */
       APP_STATES,
+
+      /**
+       * Timer value (Seconds left to game finish).
+       */
       timer: 0,
     };
   },

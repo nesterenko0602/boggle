@@ -29,8 +29,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'styles/variables';
-
 .collection__wrapper {
   align-items: center;
   display: flex;

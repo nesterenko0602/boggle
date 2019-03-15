@@ -4,7 +4,7 @@
   >
     <input
       ref="input"
-      v-model="message"
+      v-model="inputValue"
       type="text"
       class="input"
       maxlength="16"
@@ -37,8 +37,13 @@ export default {
       default: '',
     },
   },
-  data: function data() {
-    return { message: '' };
+  data() {
+    return {
+      /**
+       * Value in input field
+       */
+      inputValue: '',
+    };
   },
   computed: {
     /**
@@ -46,8 +51,8 @@ export default {
      *
      * @returns {Boolean}
      */
-    isFilled: function isFilled() {
-      return Boolean(this.message);
+    isFilled() {
+      return Boolean(this.inputValue);
     },
 
     /**
@@ -55,7 +60,7 @@ export default {
      *
      * @returns {Array}
      */
-    classNames: function classNames() {
+    classNames() {
       return [
         'input__wrapper',
         {
@@ -75,7 +80,7 @@ export default {
      *
      * @param {Event} event Native keydown event
      */
-    keyDownHandler: function keyDownHandler(event) {
+    keyDownHandler(event) {
       const { keyCode } = event;
 
       if (keyCode === KEY_CODES.ENTER) {
@@ -86,20 +91,20 @@ export default {
     /**
      * Form submit event handler
      */
-    submit: function submit() {
-      if (!this.message) {
+    submit() {
+      if (!this.inputValue) {
         return;
       }
 
-      this.$emit('submit', this.message);
-      this.dropMessage();
+      this.$emit('submit', this.inputValue);
+      this.dropInputValue();
     },
 
     /**
      * Clean up input field
      */
-    dropMessage: function dropMessage() {
-      this.message = '';
+    dropInputValue() {
+      this.inputValue = '';
     },
   },
 };

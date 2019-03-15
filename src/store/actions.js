@@ -54,7 +54,7 @@ export default {
      * Does the suggested word contains only legal characters?
      */
     if (!(/^[A-Za-z]+$/.test(word))) {
-      const errorMessage = 'Only English letters allowed';
+      const errorMessage = 'Only Latin letters allowed';
       commit(MUTATIONS.REGISTER_ERROR, errorMessage);
 
       return Promise.resolve();
