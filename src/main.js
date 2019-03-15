@@ -2,10 +2,12 @@ import Vue from 'vue';
 import VueSVGIcon from 'vue-svgicon';
 
 import App from 'App';
-import 'filters';
+import filters from 'helpers/filters';
 import store from 'store/index';
 
 Vue.use(VueSVGIcon);
+
+filters.apply(Vue);
 
 Vue.config.productionTip = false;
 
