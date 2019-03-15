@@ -3,8 +3,8 @@
     :class="classNames"
   >
     <input
-      v-model="message"
       ref="input"
+      v-model="message"
       type="text"
       class="input"
       maxlength="16"
@@ -37,11 +37,6 @@ export default {
       default: '',
     },
   },
-  mounted() {
-    this.$nextTick(function () {
-      this.$refs.input.focus();
-    })
-  },
   data: function data() {
     return { message: '' };
   },
@@ -68,6 +63,11 @@ export default {
         },
       ];
     },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$refs.input.focus();
+    });
   },
   methods: {
     /**

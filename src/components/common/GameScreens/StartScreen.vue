@@ -1,7 +1,8 @@
 <template>
   <div class="start-screen__wrapper">
     <div class="start-screen__rules">
-      Try to find as many words as possible in <b>{{ GAME_DURATION }} {{ GAME_DURATION | pluralize('second') }}</b>.
+      Try to find as many words as possible in
+      <b>{{ GAME_DURATION }} {{ GAME_DURATION | pluralize('second') }}</b>.
     </div>
     <Button
       value="Let's start!"
